@@ -1,0 +1,21 @@
+{
+  "name": "ramlunit",
+  "version": "1.0.0",
+  "description": "Validate RAML and generate JUnit-like report.",
+  "author": "Piotr Gołębiewski <loostro@gmail.com>",
+  "engines": {
+    "node": ">=0.12.3"
+  },
+  "bin": {
+    "ramlunit": "./src/ramlunit.js"
+  },
+  "main": "src/ramlunit.js",
+  "dependencies": {
+    "commander": "2.8.1",
+    "jsonfile": "^2.4.0",
+    "ramllint": "https://github.com/loostro/ramllint/tarball/master",
+    "simple-file-writer": "^2.0.0",
+    "xml-writer": "1.7.0"
+  },
+  "license": "MIT"
+}
