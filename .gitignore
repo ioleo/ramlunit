@@ -63,10 +63,7 @@ typings/
 .idea
 *.iml
 
-# Build
-dist/
-
 # Ramlunit default paths
 .ramlunit
-main.raml
-report.xml
+*.raml
+*.xml

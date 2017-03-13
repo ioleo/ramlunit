@@ -1,22 +1,50 @@
 {
   "name": "ramlunit",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Validate RAML and generate JUnit-like report.",
   "author": "Piotr Gołębiewski <loostro@gmail.com>",
+  "license": "MIT",
   "engines": {
     "node": ">=0.12.3"
   },
+  "main": "dist/src/ramlunit.js",
   "bin": {
-    "ramlunit": "./src/ramlunit.js"
+    "ramlunit": "dist/src/ramlunit.js"
   },
-  "main": "src/ramlunit.js",
+  "scripts": {
+    "build": "npm-run-all build:clean build:compile",
+    "build:clean": "rimraf dist",
+    "build:compile": "tsc",
+    "lint": "npm-run-all lint:core lint:test",
+    "lint:core": "tslint src/**/*.ts",
+    "lint:test": "tslint test/**/*.ts",
+    "test": "npm-run-all lint test:prepare test:execute",
+    "test:prepare": "npm run build",
+    "test:execute": "mocha dist/test --recursive",
+    "prepublish": "npm run test",
+    "debug": "npm run build && node dist/src/ramlunit.js --debug"
+  },
   "dependencies": {
-    "commander": "2.8.1",
-    "fs-extra": "2.0.0",
-    "jsonfile": "2.4.0",
-    "ramllint": "https://github.com/loostro/ramllint/tarball/master",
-    "simple-file-writer": "2.0.0",
-    "xml-writer": "1.7.0"
+    "commander": "^2.8.1",
+    "fs-extra": "^2.0.0",
+    "lodash": "^4.17.4",
+    "raml-1-parser": "^1.1.17",
+    "xml": "^1.0.1"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/commander": "^2.3.31",
+    "@types/fs-extra": "0.0.37",
+    "@types/lodash": "^4.14.55",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.8",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-typescript": "^1.0.23",
+    "npm-run-all": "^4.0.2",
+    "tslint": "^4.5.1",
+    "tslint-config-standard": "^4.0.0",
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0"
+  }
 }
