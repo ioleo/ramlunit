@@ -1,11 +1,11 @@
 {
   "name": "ramlunit",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Validate RAML and generate JUnit-like report.",
   "author": "Piotr Gołębiewski <loostro@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=0.12.3"
+    "node": ">=4.0.0"
   },
   "main": "dist/src/ramlunit.js",
   "bin": {
@@ -21,7 +21,6 @@
     "test": "npm-run-all lint test:prepare test:execute",
     "test:prepare": "npm run build",
     "test:execute": "mocha dist/test --recursive",
-    "prepublish": "npm run test",
     "debug": "npm run build && node dist/src/ramlunit.js --debug"
   },
   "dependencies": {
@@ -38,10 +37,12 @@
     "@types/lodash": "^4.14.55",
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.8",
+    "@types/xml": "^1.0.1",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "mocha-typescript": "^1.0.23",
     "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
     "tslint": "^4.5.1",
     "tslint-config-standard": "^4.0.0",
     "typescript": "^2.2.1",
