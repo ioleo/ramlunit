@@ -19,7 +19,7 @@ export class Application {
             .parse(process.argv)
 
         const inputPath = path.resolve(cli.args[0] || 'main.raml')
-        const outputPath = path.resolve(cli.optionFor('output') || 'ramlunit-report.xml')
+        const outputPath = path.resolve(cli.output || 'ramlunit-report.xml')
         const verbose = !!cli.debug
 
         console.log(`Running RamlUnit v${project.version} in ${verbose ? 'debug' : 'regular'} mode`)

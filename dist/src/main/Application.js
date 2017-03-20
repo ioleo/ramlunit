@@ -17,7 +17,7 @@ var Application = (function () {
             .version(project.version)
             .parse(process.argv);
         var inputPath = path.resolve(cli.args[0] || 'main.raml');
-        var outputPath = path.resolve(cli.optionFor('output') || 'ramlunit-report.xml');
+        var outputPath = path.resolve(cli.output || 'ramlunit-report.xml');
         var verbose = !!cli.debug;
         console.log("Running RamlUnit v" + project.version + " in " + (verbose ? 'debug' : 'regular') + " mode");
         console.log("Reading RAML from " + inputPath + "...");
