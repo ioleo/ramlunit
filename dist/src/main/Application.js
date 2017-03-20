@@ -30,7 +30,6 @@ var Application = (function () {
         fs.ensureFileSync(outputPath);
         fs.writeFileSync(outputPath, xmlDocument.toString());
         console.log("Report saved to " + outputPath + ".");
-        process.exit(+xmlDocument.hasFailures());
     };
     return Application;
 }());

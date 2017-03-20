@@ -38,7 +38,5 @@ export class Application {
         fs.writeFileSync(outputPath, xmlDocument.toString())
 
         console.log(`Report saved to ${outputPath}.`)
-
-        process.exit(+xmlDocument.hasFailures())
     }
 }
