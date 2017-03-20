@@ -1,6 +1,6 @@
 {
   "name": "ramlunit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Validate RAML and generate JUnit-like report.",
   "author": "Piotr Gołębiewski <loostro@gmail.com>",
   "license": "MIT",
